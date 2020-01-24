@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+function fun(){
+    var a = parseInt(document.forms["f"]["a"].value);
+    var b = parseInt(document.forms["f"]["b"].value);
+    var c = parseInt(document.forms["f"]["c"].value);
+    if(a!="" && b!="" && c!="")
+    {   var x = Math.max(a,b,c);
+        alert("maximum no = "+x);
+    }
+    else
+        alert("number field is empty!!");
+}
+</script>
+</head>
+<body>
+<form name="f">
+<input type="number" name="a" placeholder="Enter 1st no"></input><br>
+<input type="number" name="b" placeholder="Enter 2nd no"></input><br>
+<input type="number" name="c" placeholder="Enter 3rd no"></input><br>
+<button onclick=fun()>Answer</button>
+</forms>
+</body>
+</html>
