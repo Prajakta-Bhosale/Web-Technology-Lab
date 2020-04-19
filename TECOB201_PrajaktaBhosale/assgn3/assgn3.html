@@ -1,0 +1,54 @@
+<!-- Prajakta Bhosale TECOB201-->
+<html>
+<head>
+<title>Registration Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ $('#f').submit(function(e) {
+    e.preventDefault();
+    var fname = $('#fname').val();
+    var lname = $('#lname').val();
+    var email = $('#email').val();
+    var pass = $('#pass').val();
+    var pass1 = $('#pass1').val();
+
+    $(".error").remove();
+
+    if (fname.length < 1) {
+      $('#fname').after('<span class="error">This field is required</span>');
+    }
+    if (lname.length < 1) {
+      $('#lname').after('<span class="error">This field is required</span>');
+    }
+   
+    if (pass.length < 8) {
+      $('#pass').after('<span class="error">Password must be at least 8 characters long</span>');
+      
+    }
+  });
+});
+</script>
+</head>
+<body>
+<h3><b>Registration Form</b></h3>
+<form id="f" method="post" action="">
+<div class="container">
+First Name :       <input class="t1" type="text" placeholder="Enter First Name" name="fname" id="fname" required></input><br>
+Last Name :        <input  class="t1" type="text" placeholder="Enter Last Name" name="lname" id="lname" required></input><br>
+Gender : <br>
+                   <input type="radio" name="gender" value="male" id="gender" required>Male<br>
+			       <input type="radio" name="gender" value="female" id="gender" required>Female<br>
+
+BirthDate :        <input type="date" placeholder="Date of Birth" name="birthdate" id="birthdate" required></input><br>
+Email :            <input  class="t1" type="email" placeholder="Enter Email id" name="email" id="email" required></input><br>
+Password :         <input  class="t1" type="password" placeholder="Set Password" name="pass" id="pass" required></input><br>
+Confirm Password : <input  class="t1" type="password" placeholder="Confirm Password" name="pass1" id="pass1" required></input><br>
+
+<input type="submit" value="Submit">
+
+</div>
+</form>
+
+</body>
+</html>

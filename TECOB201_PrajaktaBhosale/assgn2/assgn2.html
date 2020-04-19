@@ -1,0 +1,48 @@
+<!-- Prajakta Bhosale TECOB201-->
+<html>
+<head>
+<title>Registration Page</title>
+<script>
+function fun(){
+    var fname = document.forms["f"]["fname"].value;
+    var lname = document.forms["f"]["lname"].value;
+    var pass = document.forms["f"]["pass"].value;
+    var pass1 = document.forms["f"]["pass1"].value;
+    var gender = document.forms["f"]["gender"].value;
+    var birthdate = document.forms["f"]["birthdate"].value;
+    var email = document.forms["f"]["email"].value;
+
+    if(fname!="" && lname!="" &&  pass!="" && pass1!="" && email!="" && birthdate!="" && gender!="")
+    {   
+    	if(!(pass.localeCompare(pass1)))	
+            {alert("Registration Successful!!");}
+        else
+          { alert("Incorrect password");}
+    }
+    else
+        alert("Please fill all fields");
+}
+</script>
+</head>
+<body>
+<h3><b>Registration Form</b></h3>
+<form name="f">
+<div class="container">
+First Name :       <input class="t1" type="text" placeholder="Enter First Name" name="fname" required></input><br>
+Last Name :        <input  class="t1" type="text" placeholder="Enter Last Name" name="lname" required></input><br>
+Gender : <br>
+                   <input type="radio" name="gender" value="male" required>Male<br>
+			       <input type="radio" name="gender" value="female" required>Female<br>
+
+BirthDate :        <input type="date" placeholder="Date of Birth" name="birthdate" required></input><br>
+Email :            <input  class="t1" type="email" placeholder="Enter Email id" name="email" required></input><br>
+Password :         <input  class="t1" type="password" placeholder="Set Password" name="pass" required></input><br>
+Confirm Password : <input  class="t1" type="password" placeholder="Confirm Password" name="pass1" required></input><br>
+
+<input type="submit" value="Submit" onclick="fun()"/>
+
+</div>
+</form>
+
+</body>
+</html>
